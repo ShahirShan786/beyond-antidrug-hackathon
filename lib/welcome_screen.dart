@@ -1,3 +1,4 @@
+import 'package:beyond/core/const.dart';
 import 'package:beyond/screens/main_screen/login_screen.dart';
 import 'package:beyond/screens/main_screen/register_screen.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +48,7 @@ class WelcomeScreen extends StatelessWidget {
         ),
         // Welcome Text
         Positioned(
-          top: 370,
+          top: 390,
           right: 60,
           child: Text(
             textAlign: TextAlign.center,
@@ -125,6 +126,21 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 250),
+          child: Align(
+            alignment: Alignment.topCenter,
+            child: Text(
+              "Beyond",
+              style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+                decoration: TextDecoration.none, // Remove underline explicitly
               ),
             ),
           ),

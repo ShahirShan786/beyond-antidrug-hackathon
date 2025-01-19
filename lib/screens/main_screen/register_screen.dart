@@ -1,4 +1,5 @@
 import 'package:beyond/core/const.dart';
+import 'package:beyond/dash_board_screen.dart';
 import 'package:beyond/screens/main_screen/login_screen.dart';
 import 'package:beyond/services/register_services.dart';
 import 'package:beyond/widgets/custom_text_field.dart';
@@ -80,26 +81,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 size: 25,
                               )),
                   ),
-                  CustomTextFeild(
-                      hintLabel: "confirm password",
-                      controller: passwordConteoller,
-                      onpressed: () {},
-                      obsqureText: isvisible,
-                      suffixWidget: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              isvisible = !isvisible;
-                            });
-                          },
-                          icon: isvisible == true
-                              ? Icon(
-                                  Icons.visibility_off_outlined,
-                                  size: 25,
-                                )
-                              : Icon(
-                                  Icons.visibility,
-                                  size: 25,
-                                ))),
                   SizedBox(
                     height: 230,
                   ),
@@ -124,8 +105,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            LoginScreen()));
+                                        builder: (context) => LoginScreen()));
                               }
                             }
                           },

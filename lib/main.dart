@@ -1,7 +1,5 @@
 import 'package:beyond/dash_board_screen.dart';
-import 'package:beyond/screens/main_screen/dummy_screen.dart';
-import 'package:beyond/screens/main_screen/login_screen.dart';
-import 'package:beyond/screens/main_screen/register_screen.dart';
+import 'package:beyond/welcome_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,7 +43,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          home: DashBoardScreen(),
+          home: WelcomeScreen(),
         );
       },
     );

@@ -8,11 +8,11 @@ class profilescreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       height: double.infinity,
       child: Column(children: [
-        Container(
+        SizedBox(
           width: double.infinity,
           height: 150,
           child: Padding(

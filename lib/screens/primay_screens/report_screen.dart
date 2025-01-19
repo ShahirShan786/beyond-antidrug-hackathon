@@ -388,7 +388,7 @@ class _ReportScreensState extends State<ReportScreens> {
                                       AwesomeDialog(
                                         // ignore: use_build_context_synchronously
                                         context: context,
-                                        dialogType: DialogType.warning,
+                                        dialogType: DialogType.success,
                                         animType: AnimType.bottomSlide,
                                         headerAnimationLoop: false,
                                         showCloseIcon: false,
@@ -397,9 +397,9 @@ class _ReportScreensState extends State<ReportScreens> {
                                             'Speak up safely. Act Anonymously.',
                                         btnOkText: "Continue",
                                         btnOkOnPress: () {},
-                                        btnOkColor: Colors.green,
+                                        btnOkColor:
+                                            Color.fromARGB(255, 36, 127, 133),
                                       ).show();
-                                      ;
                                     }
                                   },
                                   child: Container(

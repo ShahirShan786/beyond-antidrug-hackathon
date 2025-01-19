@@ -1,8 +1,7 @@
-import 'dart:ffi';
-
 import 'package:beyond/core/const.dart';
 import 'package:beyond/core/dummy.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:beyond/screens/primay_screens/challenge_overview_screen.dart';
+import 'package:beyond/screens/primay_screens/my_challenge_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -69,20 +68,28 @@ class ChallengesScreen extends StatelessWidget {
                 SizedBox(
                   width: 5,
                 ),
-                Container(
-                  width: 98,
-                  height: 60,
-                  decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 0, 128, 128),
-                      borderRadius: BorderRadius.circular(18)),
-                  child: Center(
-                    child: Text(
-                      "my\nChallenges",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.poppins(
-                          fontSize: 14,
-                          color: kwhite,
-                          fontWeight: FontWeight.w600),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (ctx) => MyChallengeScreen()));
+                  },
+                  child: Container(
+                    width: 98,
+                    height: 60,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 0, 128, 128),
+                        borderRadius: BorderRadius.circular(18)),
+                    child: Center(
+                      child: Text(
+                        "my\nChallenges",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.poppins(
+                            fontSize: 14,
+                            color: kwhite,
+                            fontWeight: FontWeight.w600),
+                      ),
                     ),
                   ),
                 )
@@ -168,7 +175,7 @@ class ChallengesScreen extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image.network(
-                      "https://static.vecteezy.com/system/resources/previews/006/898/179/non_2x/studying-and-learning-online-concept-illustration-free-vector.jpg",
+                      "https://i.ibb.co/d5BR5Wb/IMG-6772.png",
                       width: 120,
                     ),
                   )
@@ -211,133 +218,144 @@ class ChallengesScreen extends StatelessWidget {
                         const EdgeInsets.symmetric(horizontal: 2, vertical: 5),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        width: 260,
-                        height: 280,
-                        decoration: BoxDecoration(
-                            color: Color.fromRGBO(231, 231, 231, 0.9),
-                            borderRadius: BorderRadius.circular(20)),
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 15),
-                              child: Stack(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 10, vertical: 5),
-                                    child: Container(
-                                      width: 260,
-                                      height: 160,
-                                      decoration: BoxDecoration(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (ctx) => ChallengeOverviewScreen()));
+                        },
+                        child: Container(
+                          width: 260,
+                          height: 280,
+                          decoration: BoxDecoration(
+                              color: Color.fromRGBO(231, 231, 231, 0.9),
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 15),
+                                child: Stack(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 10, vertical: 5),
+                                      child: Container(
+                                        width: 260,
+                                        height: 160,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(15)),
+                                        child: ClipRRect(
                                           borderRadius:
-                                              BorderRadius.circular(15)),
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(15),
-                                        child: Image.network(
-                                          label.image,
-                                          width: 230,
-                                          height: 150,
-                                          fit: BoxFit.fitHeight,
+                                              BorderRadius.circular(15),
+                                          child: Image.network(
+                                            label.image,
+                                            width: 230,
+                                            height: 150,
+                                            fit: BoxFit.fitHeight,
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  Positioned(
-                                    top: 7,
-                                    right: 10,
-                                    child: CircleAvatar(
-                                      radius: 20,
-                                      backgroundColor: Colors.grey[300],
-                                      child: Center(
-                                        child: IconButton(
-                                            onPressed: () {},
-                                            icon: Icon(Icons.favorite_border)),
+                                    Positioned(
+                                      top: 7,
+                                      right: 10,
+                                      child: CircleAvatar(
+                                        radius: 20,
+                                        backgroundColor: Colors.grey[300],
+                                        child: Center(
+                                          child: IconButton(
+                                              onPressed: () {},
+                                              icon:
+                                                  Icon(Icons.favorite_border)),
+                                        ),
                                       ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 20, top: 12),
-                              child: Align(
-                                alignment: Alignment.topLeft,
-                                child: Column(
-                                  children: [
-                                    SizedBox(
-                                      width: double.infinity,
-                                      height: 60,
-                                      child: Text(
-                                        overflow: TextOverflow.ellipsis,
-                                        label.label,
-                                        maxLines: 2,
-                                        style: GoogleFonts.poppins(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w600,
-                                            color: Colors.black),
-                                      ),
-                                    ),
+                                    )
                                   ],
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 40,
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 16),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(
-                                    width: 115,
-                                    height: 37,
-                                    decoration: BoxDecoration(
-                                        color: kwhite,
-                                        borderRadius:
-                                            BorderRadius.circular(10)),
-                                    child: Center(
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Icon(
-                                            Icons.access_time_rounded,
-                                            size: 18,
-                                          ),
-                                          SizedBox(
-                                            width: 2,
-                                          ),
-                                          Text("30 days"),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(right: 10),
-                                    child: Row(
-                                      children: [
-                                        Icon(
-                                          Icons.star,
-                                          color: Colors.amber[400],
-                                        ),
-                                        Text(
-                                          "4.9",
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 20, top: 12),
+                                child: Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Column(
+                                    children: [
+                                      SizedBox(
+                                        width: double.infinity,
+                                        height: 60,
+                                        child: Text(
+                                          overflow: TextOverflow.ellipsis,
+                                          label.label,
+                                          maxLines: 2,
                                           style: GoogleFonts.poppins(
                                               fontSize: 16,
-                                              color: Colors.grey[700],
-                                              fontWeight: FontWeight.w500),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                                ],
+                                              fontWeight: FontWeight.w600,
+                                              color: Colors.black),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ),
-                            )
-                          ],
+                              SizedBox(
+                                height: 40,
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 16),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      width: 115,
+                                      height: 37,
+                                      decoration: BoxDecoration(
+                                          color: kwhite,
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
+                                      child: Center(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                              Icons.access_time_rounded,
+                                              size: 18,
+                                            ),
+                                            SizedBox(
+                                              width: 2,
+                                            ),
+                                            Text("21 days"),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(right: 10),
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            Icons.star,
+                                            color: Colors.amber[400],
+                                          ),
+                                          Text(
+                                            "4.9",
+                                            style: GoogleFonts.poppins(
+                                                fontSize: 16,
+                                                color: Colors.grey[700],
+                                                fontWeight: FontWeight.w500),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ),

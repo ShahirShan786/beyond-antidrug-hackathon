@@ -114,6 +114,12 @@ class _LoginScreenState extends State<LoginScreen> {
                               } else {
                                 // Navigate to DashboardScreen if login succeeds
                                  if(!context.mounted) return;
+                                 ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    backgroundColor: Colors.green,
+                                    content: Text("Log in Sucessfully"),
+                                  ));
+                                 if(!context.mounted) return;
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(

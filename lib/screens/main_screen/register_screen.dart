@@ -1,5 +1,4 @@
 import 'package:beyond/core/const.dart';
-import 'package:beyond/dash_board_screen.dart';
 import 'package:beyond/screens/main_screen/login_screen.dart';
 import 'package:beyond/services/register_services.dart';
 import 'package:beyond/widgets/custom_text_field.dart';

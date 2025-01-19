@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:beyond/model/logUser_model.dart';
-import 'package:beyond/model/user_model.dart';
 import 'package:http/http.dart' as http;
 
 

@@ -1,4 +1,3 @@
-import 'package:beyond/core/const.dart';
 import 'package:flutter/material.dart';
 
 class ProfileCard extends StatelessWidget {
